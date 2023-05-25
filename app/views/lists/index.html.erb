@@ -1,0 +1,48 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/lists">
+      <img src="https://cdn-icons-png.flaticon.com/512/2798/2798007.png" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <%= link_to "My Lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New List", new_list_path, class:"nav-link" %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wdfyfe.files.wordpress.com/2017/06/film-1.jpg);">
+  <div class="container">
+    <h1>Save <strong>any</strong> kind of <strong>movies</strong></h1>
+    <%= link_to "Create list", new_list_path, class: "btn btn-flat mt-3" %>
+  </div>
+</div>
+
+<div class="container m-5">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class:"text-decoration-none text-light", :action => 'go' do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/free-photo/movie-background-collage_23-2149876028.jpg)">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
