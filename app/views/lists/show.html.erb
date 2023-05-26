@@ -43,9 +43,9 @@
   </div>
   <div class="count">
     <% if @movies.count == 1 %>
-      <p><%= @movies.count %> movie</p>
+      <p class="counter"><%= @movies.count %> movie</p>
     <% else %>
-      <p><%= @movies.count %> movies</p>
+      <p class="counter"><%= @movies.count %> movies</p>
     <% end %>
   </div>
 </div>
@@ -55,19 +55,19 @@
   <div class="cards">
     <% @movies.each do |movie| %>
       <div class="card">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column justify-content-between">
           <div class="d-flex align-items-center gap-2 mb-2">
             <h6 class="card-title m-0"><%= movie.title %></h5>
             <p class="card-text m-0 p-0"><small class="text-muted"><%= movie.rating %></small></p>
             <p class="m-0 p-0"><i class="fa-solid fa-star" style="color: #ffbb00;"></i></p>
           </div>
-          <p class="card-text text-secondary" style="font-size: 12px"><%= movie.overview %></p>
-            <% movie.bookmarks.each do |bookmark| %>
-              <div class="d-flex justify-content-between align-items-center">
-                <p class="card-text m-0 p-0" style="font-size: 12px"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
-                <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger btn-sm text-light"%>
-              </div>
+          <p class="card-text text-secondary overflow-auto max-height-100" style="font-size: 12px"><%= movie.overview %></p>
+          <div class="d-flex justify-content-between">
+            <p class="card-text" style="font-size: 12px"><i class="fa-solid fa-quote-left" style="color: #000000;"></i> <%= @bookmarks.where(movie_id: movie.id).first.comment %></p>
+            <%= link_to bookmark_path(@bookmarks.where(movie_id: movie.id).first.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+              <i class="fa-solid fa-trash-can me-3" style="color: #000000;"></i>
             <% end %>
+          </div>
         </div>
       </div>
     <% end %>

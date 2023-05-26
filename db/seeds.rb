@@ -1,7 +1,7 @@
 require 'json'
 require 'open-uri'
 
-url = 'https://tmdb.lewagon.com/movie/top_rated'
+url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=88f9beeb21cb1afe1d4b0823ebea81a3'
 html_content = URI.open(url).read
 json_content = JSON.parse(html_content)
 json_content_results = json_content["results"]

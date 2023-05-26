@@ -18,27 +18,28 @@
   border-radius: 4px;
   background: #005ee2;
   transition: background 0.3s ease;
+}
 
-  .btn-flat-delete {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #af0000;
-    transition: background 0.3s ease;
-  }
+.btn-flat-delete {
+  color: white;
+  font-size: small;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background: #E32D17;
+  transition: background 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
 
-  .btn-flat-delete:hover {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #710000;
-    transition: background 0.3s ease;
-  }
-
+.btn-flat-delete:hover {
+  background: #63130A;
+  color: white;
+  transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #0044a2;
+  background: #002963;
   color: white;
 }
 
