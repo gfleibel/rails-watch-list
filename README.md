@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Website where the user can create movie lists, add and remove movies in those lists.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+To access the project through `localhost:3000`, you need to set up a local development environment using Ruby. Follow these steps to get started:
 
-* System dependencies
+1. **Install Ruby**: Visit the [official Ruby website](https://www.ruby-lang.org/en/downloads/) and download the appropriate version for your operating system. Follow the installation instructions provided on the website.
 
-* Configuration
+2. **Clone the Repository**: If you haven't already, clone the repository or download the project files to your local machine.
 
-* Database creation
+3. **Install Dependencies**: Open a terminal or command prompt and navigate to the project's directory. Run the following command to install the required dependencies: bundle install
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
